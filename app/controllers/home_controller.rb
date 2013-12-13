@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 		@frontpage2 = []
 
 		@frontpage["data"]["children"].each do |x|
-			@frontpage2.push(x["data"]["permalink"])
+			@frontpage2.push("http://www.reddit.com"+x["data"]["permalink"])
 		end
 
 		

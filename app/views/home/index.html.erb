@@ -1,3 +1,7 @@
-<div id="results-container"><%=Page.find(1).url%></div>
-<div id="response-container"><%=  @frontpagetitles%></div>
-<div id="response-container"><%=  @frontpage2%></div>
+<div id="results-container"><%=Page.find(1).url %></div>
+<div id="response-container"><%=  @frontpagetitles %></div>
+
+
+<% @frontpage2.each do |x| %>
+	<div id="response-container"><a href='<%= x %>'><%= x %></a></div>
+<% end %>
