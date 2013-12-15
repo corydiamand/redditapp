@@ -11,21 +11,27 @@ class HomeController < ApplicationController
 		
 		#@frontpage = JSON.parse(res.body)
 		@frontpage = JSON.parse(res.body)
-		@frontpage2 = []
+		#@frontpage2 = []
+		@frontpage2 = parse_frontpage_permalinks(@frontpage)
+		#@frontpage["data"]["children"].each do |x|
+		#	@frontpage2.push("http://www.reddit.com"+x["data"]["permalink"])
+		#end
 
-		@frontpage["data"]["children"].each do |x|
-			@frontpage2.push("http://www.reddit.com"+x["data"]["permalink"])
-		end
 
-		
-	
 	end
 
 	def search
 	end
 
-	def parse_permalinks(reddit_data)
+	def parse_frontpage_permalinks(frontpage_json)
+		permalink_array = []
 		
+		frontpage_json["data"]["children"].each do |x|
+
+			permalink_array.push("http://www.reddit.com"+x["data"]["permalink"])
+
+		end
+		permalink_array
 	end
 
 end

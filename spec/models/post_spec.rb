@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Post do
-  it "has an accessible 'contents' attribute"
-  it "has an accessible 'url' attribute"
+  it "is invalid without a url" do
+  	FactoryGirl.build(:post, url:nil).should_not be_valid
+  end
 end
