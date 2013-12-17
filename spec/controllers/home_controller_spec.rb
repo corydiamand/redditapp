@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe HomeController do
 
+	describe "request_page" do
+		it "is given a url w/ .json and returns a hash" do
+			result = controller.request_page('http://www.reddit.com/.json')
+			result.class.should == Hash
+		end
+	end
+
 	describe "parse_frontpage_permalinks" do
 		it "returns an array with 25 permalinks in it" do
 
