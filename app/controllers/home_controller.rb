@@ -6,9 +6,9 @@ class HomeController < ApplicationController
 		@frontpage2 = parse_frontpage_permalinks(@frontpage)
 
 	end
+	
 
 	def search
-
 	end
 
 	#give this method a .json url!
@@ -34,6 +34,16 @@ class HomeController < ApplicationController
 		end
 
 		permalink_array
+
+	end
+
+	def get_frontpage_comments()
+		@request = request_page('http://www.reddit.com/.json')
+		@frontpage_links = parse_frontpage_permalinks(@request)
+
+		@frontpage_links.each do |link|
+			
+		end
 
 	end
 

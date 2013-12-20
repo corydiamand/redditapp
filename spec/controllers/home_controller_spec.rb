@@ -28,4 +28,14 @@ describe HomeController do
 		end
 	end
 
+	describe "get_frontpage_comments" do
+
+		it "returns an array with all comments from every fontpage thread" do
+			 test = controller.get_frontpage_comments()
+			 test.should == Array
+			 test.length.should == 24
+		end
+
+	end
+
 end
