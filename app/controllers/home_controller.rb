@@ -2,8 +2,9 @@ class HomeController < ApplicationController
 
 	def index
 
-		@frontpage = request_page('http://www.reddit.com/.json')
-		@frontpage2 = parse_frontpage_permalinks(@frontpage)
+		#@frontpage = request_page('http://www.reddit.com/.json')
+		#@frontpage2 = parse_frontpage_permalinks(@frontpage)
+		@frontpage3 = get_frontpage_comments
 
 	end
 	
@@ -38,13 +39,15 @@ class HomeController < ApplicationController
 	end
 
 	def get_frontpage_comments()
-		@request = request_page('http://www.reddit.com/.json')
-		@frontpage_links = parse_frontpage_permalinks(@request)
+		request = request_page('http://www.reddit.com/.json')
+		frontpage_links = parse_frontpage_permalinks(request)
+		comments_array = []
 
-		@frontpage_links.each do |link|
-			
+		#remove the 0 after frontpage links to get comments for all the links
+		frontpage_links[0..3].each do |link|
+			comments_array.push(request_page(link+".json"))
 		end
-
+		comments_array
 	end
 
 end
