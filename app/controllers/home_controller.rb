@@ -44,7 +44,7 @@ class HomeController < ApplicationController
 		comments_array = []
 
 		#remove the 0 after frontpage links to get comments for all the links
-		frontpage_links[0..3].each do |link|
+		frontpage_links[0..1].each do |link|
 			comments_array.push(request_page(link+".json"))
 		end
 		comments_array
