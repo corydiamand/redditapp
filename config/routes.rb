@@ -1,5 +1,5 @@
 Redditapp::Application.routes.draw do
-  match '' => 'home#index'
+  get '' => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

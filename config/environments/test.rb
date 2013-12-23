@@ -11,8 +11,8 @@ Redditapp::Application.configure do
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
 
-  # Log error messages when you accidentally call methods on nil
-  config.whiny_nils = true
+  # Log error messages when you accidentally call methods on nil. (deprecated in 4.0)
+  #config.whiny_nils = true
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -34,4 +34,7 @@ Redditapp::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  #new in rails 4, no idea what this does..
+  config.eager_load = false
 end
