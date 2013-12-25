@@ -1,16 +1,34 @@
-<div id="results-container"><%=Page.find(1).url %></div>
-<div id="response-container"><%#=  @frontpagetitles %></div>
-<div id="response-container"><%#= @frontpage["data"]["children"][0]["data"]["permalink"] %></div>
-<%= @frontpage3 %>
+<div id="index-container">
+	<div id="home-banner">
+		<div id="login">Login</div>
+		<div id="logo-container">
+			<div id="logo">ReddyTapp</div>
+			<div id="slogan">Monitor your reddit presence</div>
+			<div id="results-container"><%#=Page.find(1).url %></div>
+		</div>
+		<div id="interface-image"></div>
+	</div>
+	<div id="slogan-2">Tap into the conversation</div>
+	<div id="home-icon-container">
+		<div id="home-icon">Trends</div>
+		<div id="home-icon">Context</div>
+		<div id="home-icon">Analysis</div>
+	</div>
 
 
 <%
 =begin
 %>
-<% @frontpage2.each do |x| %>
-	<div id="response-container"><a href='<%= x %>'><%= x %></a></div>
-<% end %>
+	<%= @frontpage3 %>
+
+
+
+	<% @frontpage2.each do |x| %>
+		<div id="response-container"><a href='<%= x %>'><%= x %></a></div>
+	<% end %>
 
 <%
 =end
 %>
+
+</div>

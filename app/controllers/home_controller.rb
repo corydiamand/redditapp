@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
 		#@frontpage = request_page('http://www.reddit.com/.json')
 		#@frontpage2 = parse_frontpage_permalinks(@frontpage)
-		@frontpage3 = get_frontpage_comments
+		#@frontpage3 = get_frontpage_comments
 
 	end
 	

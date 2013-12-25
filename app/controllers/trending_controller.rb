@@ -1,0 +1,3 @@
+class TrendingController < ApplicationController
+	
+end
